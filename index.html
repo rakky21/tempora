@@ -2,160 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="scss/_variables.scss" /> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- <link rel="stylesheet" href="scss/_variables.scss" /> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Tempora</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <title>Tempora</title>
 
 </head>
-
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-light primary bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#./index.html">Weather DashBoard</a> -->
-
-
 <div class="hero hero-sm bg-gray">
-    <div class="hero-body">
-        <h1>Weahter DashBoard</h1>
-    </div>
+  <div class="hero-body">
+    <h1>Weahter DashBoard</h1>
+  </div>
 </div>
 
 <header class="navbar">
-    <section class="navbar-section">
-    </section>
-    <section class="navbar-section">
-        <div class="input-group input-inline">
-            <div class="gcse-search"></div>
-        </div>
-    </section>
+  <section class="navbar-section">
+  </section>
+  <section class="navbar-section">
+    <div class="input-group input-inline">
+      <div class="gcse-search"></div>
+    </div>
+  </section>
 </header>
 <!-- need weahter apis. -->
 
 <body>
-    <!-- <div class ="row">   -->
-    <div class="col-=  bg-light container-fluid">
-
-        <div class="col-4 bg-light container-fluid">
-
-            <div class="col-6 container-fluid row-8 p-5 border bg-light container-fluid">
-                Search for a City:
-                <input type="text" class="form-control" id="searchCity" placeholder="Alexandria, Virginia"
-                    aria-label="City">
-                <button type="button" id="weatherBtn" class="btn btn-primary">Search</button>
-            </div>
-        </div>
-
-
-
-        
-        <div class="col-= row-8 p-5 border bg-light container-fluid">
-            <div class="col-= row-8 p-5  bg-light container-fluid">
-                <div class="content" id="weatherContent">
-                    <img id="weatherImg" src="" alt="">
-
-
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title" id="weatherModalTemp">Temp</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-
-
-
-
-
-
-
-
-
-
-                    <p id="weatherTemp"></p>
-                    <p id="weatherWind"></p>
-                    <p id="weatherHumidity"></p>
-                </div>
-                <div class="content row" id="weatherRowContent">5-Day Forecast:
-                    <img id="weatherRowImg" src="" alt="">
-
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-                      
-                      <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-
-                      <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-<br />
-                      <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-
-                      <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                      </div>
-
-
-
-
-
-
-
-
-
-
-                    <!-- <p id="weatherRowTemp"></p> -->
-                    <!-- <p id="weatherRowWind"></p>
-                    <p id="weatherRowHumidity"></p> -->
-                </div>
-            </div>
-        </div>
-
-    </div>
+  <!-- search box -->
+  <div class="col-=  bg-light container-fluid">
+    <div class="col-6 container-fluid row-8 p-5 border bg-light container-fluid">
+      <h2> Search for a City: </h2>
+      <input type="text" class="form-control" id="searchCity" placeholder="Alexandria, Virginia" aria-label="City">
+      <button type="button" id="weatherBtn" class="btn btn-primary">Search</button>
     </div>
 
+    <div class="content row" id="weatherContent">
+      <!-- main one -->
+      <div class="content row">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title" id="weatherTemp">City</h5>
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+            <p class="card-text" id="weatherUV">UV Index:</p>
+          </div>
+        </div>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/js/script2.js"></script>
+      <div class="content row" id="weatherRowContent">
+        <h2>5-Day Forecast: </h2>
+        <!-- 1 -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+          </div>
+        </div>
+        <!-- 5 -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <img src="..." class="card-img-top" alt="...">
+            <p class="card-text" id="weatherTemp">Temp:</p>
+            <p class="card-text" id="weatherWind">Wind:</p>
+            <p class="card-text" id="weatherHumidity">Humidity:</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/script2.js"></script>
 </body>
 
 </html>

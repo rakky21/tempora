@@ -172,18 +172,24 @@ function getWeather(searchCity) {
                 .then(data => {
                     console.log(data)
                     if (currentWeather.name) {
-                        $('#weatherContent').text(currentWeather.name);
-                        // $('#weatherTemp').text('Temp: ' + currentWeather.coord.temp + 'F');
+                        $('#weatherTemp').text(currentWeather.name + ' Date Img');
+                        $('#weatherTemp').text('Temp: ' + currentWeather.coord.lat.main.weather[0] + 'F');
+                        $('#weatherTemp').text('Temp: ' + currentWeather.main.weather + 'F');
                         $("#weatherTemp").text(currentWeather.temp);
-                        // $('#weatherWind').text('Wind: ' + currentWeather.wind_speed + " MPH");
-                        // $('#weatherHumidity').text('Humidity: ' + currentWeather.humidity + ' %');
+                        $('#weatherWind').text('Wind: ' + currentWeather.wind_speed + " MPH");
+                        $('#weatherHumidity').text('Humidity: ' + currentWeather.humidity + ' %');
+
                         $('#weatherContent').show();
+                        $('#weatherTemp').show();
+                        $('#weatherHumidity').show();
+                        $('#weatherWind').show();
+                        // console.log(this)
                     }
                     else {
                         $("#weatherModalTitle").text("City is invalid. Please try again.");
                         $("#weatherModalTitle").addClass("text-error");
                         // localStorage.clear();
-                        $("#weatherModalFooter").hide()
+                        // $("#weatherModalFooter").hide()
                         $("#weatherContent").addClass("text-error");
                     }
                 });
@@ -191,16 +197,11 @@ function getWeather(searchCity) {
 }
 
 
-
-
 $("#weatherBtn").click(function () {
     var searchCity = $("#searchCity").val()
     getWeather(searchCity);
     localStorage.setItem("city", JSON.stringify(searchCity));
 });
-
-
-
 
 
 // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
