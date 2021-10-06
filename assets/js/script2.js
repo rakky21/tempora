@@ -172,17 +172,19 @@ function getWeather(searchCity) {
                 .then(data => {
                     console.log(data)
                     if (currentWeather.name) {
-                        $('#weatherTemp').text(currentWeather.name + ' Date Img');
-                        $('#weatherTemp').text('Temp: ' + currentWeather.coord.lat.main.weather[0] + 'F');
-                        $('#weatherTemp').text('Temp: ' + currentWeather.main.weather + 'F');
-                        $("#weatherTemp").text(currentWeather.temp);
-                        $('#weatherWind').text('Wind: ' + currentWeather.wind_speed + " MPH");
-                        $('#weatherHumidity').text('Humidity: ' + currentWeather.humidity + ' %');
+                        $('#weatherName').text(currentWeather.name + ' Date Img');
+                        $('#weatherTemp').text('Temp: ' + currentWeather.main.temp + 'F');
+                        $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
+                        $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
 
+                        $('#weatherHumidity').text('UV Index: ' + currentWeather.uvi + ' %');
+
+                        console.log(currentWeather.temp)
                         $('#weatherContent').show();
                         $('#weatherTemp').show();
                         $('#weatherHumidity').show();
                         $('#weatherWind').show();
+                        $('#weatherHumidity').show();
                         // console.log(this)
                     }
                     else {
@@ -214,4 +216,3 @@ $("#weatherBtn").click(function () {
 //             console.log(fiveDays)
 //         });
 // }
-
