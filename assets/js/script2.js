@@ -177,7 +177,7 @@ function getWeather(searchCity) {
                         $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
                         $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
 
-                        $('#weatherHumidity').text('UV Index: ' + currentWeather.uvi + ' %');
+                        $('#weatherUV').text('UV Index: ' + currentWeather.uvi + ' %');
 
                         console.log(currentWeather.temp)
                         $('#weatherContent').show();
