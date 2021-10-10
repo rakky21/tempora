@@ -1,35 +1,47 @@
 
 function getWeather(searchCity) {
 
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCity + '&appid=d61c8cb5a02cd5f780f48614bb611138')
-      .then(response => response.json())
-      .then(currentWeather => {
-          console.log(currentWeather)
-          fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + currentWeather.coord.lat + '&lon=' + currentWeather.coord.lon + '&appid=d61c8cb5a02cd5f780f48614bb611138')
-              .then(response => response.json())
-              .then(data => {
-                  console.log(data)
-                  fetch('https:// api.openweathermap.org/data/2.5/forecast?q=' + cityList + '&appid=d61c8cb5a02cd5f780f48614bb611138')
-                  .then(response => response.json())
-                  .then(fiveDays => {
-                      console.log(fiveDays)
-                  });
-          
-                  if (currentWeather.name) {
-                      $('#weatherContent').text(currentWeather.name);
-                      // $('#weatherTemp').text('Temp: ' + currentWeather.coord.temp + 'F');
-                      $("#weatherTemp").text(currentWeather.temp);
-                      $('#weatherWind').text('Wind: ' + currentWeather.wind_speed + " MPH");
-                      $('#weatherHumidity').text('Humidity: ' + currentWeather.humidity + ' %');
-                      $('#weatherContent').show();
-                  }
-              });
-      });
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCity + '&appid=d61c8cb5a02cd5f780f48614bb611138&units=imperial')
+        .then(response => response.json())
+        .then(currentWeather => {
+            console.log(currentWeather)
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + currentWeather.coord.lat + '&lon=' + currentWeather.coord.lon + '&appid=d61c8cb5a02cd5f780f48614bb611138')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + searchCity + '&appid=d61c8cb5a02cd5f780f48614bb611138')
+                        .then(response => response.json())
+                        .then(fiveDays => {
+                            console.log(fiveDays)
+                            if (currentWeather.name) {
+                                $('#weatherName').text(currentWeather.name + ' Date Img');
+                                $('#weatherTemp').text('Temp: ' + currentWeather.main.temp + 'F');
+                                $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
+                                $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
+                                $('#weatherUV').text('UV Index: ' + currentWeather.uvi + ' %');
+                                console.log(currentWeather.temp)
+                                $('#weatherContent').show();
+                                $('#weatherTemp').show();
+                                $('#weatherHumidity').show();
+                                $('#weatherWind').show();
+                                $('#weatherHumidity').show();
+                                // console.log(this)
+                                // 5 day
+                            }
+                            else {
+                                $("#weatherModalTitle").text("City is invalid. Please try again.");
+                                $("#weatherModalTitle").addClass("text-error");
+                                // localStorage.clear();
+                                // $("#weatherModalFooter").hide()
+                                $("#weatherContent").addClass("text-error");
+                            };
+                        });
+                });
+        });
 }
 
-
 $("#weatherBtn").click(function () {
-  var searchCity = $("#searchCity").val()
-  getWeather(searchCity);
-  localStorage.setItem("city", JSON.stringify(searchCity));
+    var searchCity = $("#searchCity").val()
+    getWeather(searchCity);
+    localStorage.setItem("city", JSON.stringify(searchCity));
 });

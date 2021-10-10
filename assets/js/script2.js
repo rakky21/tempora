@@ -171,33 +171,31 @@ function getWeather(searchCity) {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    if (currentWeather.name) {
-                        $('#weatherName').text(currentWeather.name + ' Date Img');
-                        $('#weatherTemp').text('Temp: ' + currentWeather.main.temp + 'F');
-                        $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
-                        $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
-
-                        $('#weatherUV').text('UV Index: ' + currentWeather.uvi + ' %');
-
-                        console.log(currentWeather.temp)
-                        $('#weatherContent').show();
-                        $('#weatherTemp').show();
-                        $('#weatherHumidity').show();
-                        $('#weatherWind').show();
-                        $('#weatherHumidity').show();
-                        // console.log(this)
-                    }
-                    else {
-                        $("#weatherModalTitle").text("City is invalid. Please try again.");
-                        $("#weatherModalTitle").addClass("text-error");
-                        // localStorage.clear();
-                        // $("#weatherModalFooter").hide()
-                        $("#weatherContent").addClass("text-error");
-                    }
+                            if (currentWeather.name) {
+                                $('#weatherName').text(currentWeather.name + ' Date Img');
+                                $('#weatherTemp').text('Temp: ' + currentWeather.main.temp + 'F');
+                                $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
+                                $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
+                                $('#weatherUV').text('UV Index: ' + currentWeather.uvi + ' %');
+                                console.log(currentWeather.temp)
+                                $('#weatherContent').show();
+                                $('#weatherTemp').show();
+                                $('#weatherHumidity').show();
+                                $('#weatherWind').show();
+                                $('#weatherHumidity').show();
+                                // console.log(this)
+                                // 5 day
+                            }
+                            else {
+                                $("#weatherModalTitle").text("City is invalid. Please try again.");
+                                $("#weatherModalTitle").addClass("text-error");
+                                // localStorage.clear();
+                                // $("#weatherModalFooter").hide()
+                                $("#weatherContent").addClass("text-error");
+                            };
+                        });
                 });
-        });
-}
-
+            }
 
 $("#weatherBtn").click(function () {
     var searchCity = $("#searchCity").val()
@@ -206,13 +204,5 @@ $("#weatherBtn").click(function () {
 });
 
 
-// api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
 
 
-// function getDays(cityList) {
-//     fetch('https:// api.openweathermap.org/data/2.5/forecast?q=' + cityList + '&appid=d61c8cb5a02cd5f780f48614bb611138')
-//         .then(response => response.json())
-//         .then(fiveDays => {
-//             console.log(fiveDays)
-//         });
-// }
