@@ -47,7 +47,7 @@ function getWeather(searchCity) {
                       $("#weatherContent").addClass("text-error");
                   }
               });
-      }); ` `
+      });
 // });
 }
 
