@@ -13,30 +13,27 @@ function getWeather(searchCity) {
                   .then(response => response.json())
                   .then(fiveDays => {
                       console.log(fiveDays)
-                  });
-          
                   if (currentWeather.name) {
-                    $('#weatherName').text(currentWeather.name + ' Date Img');
-                    $('#weatherTemp').text('Temp: ' + currentWeather.main.temp + 'F');
-                    $('#weatherWind').text('Wind: ' + currentWeather.wind.speed + " MPH");
-                    $('#weatherHumidity').text('Humidity: ' + currentWeather.main.humidity + ' %');
-                    $('#weatherUVI').text('UV Index: ' + data.current.uvi + ' %');
-                    console.log(currentWeather.temp)
-                    $('#weatfgfherContent').show();
-                    $('#weatherTemp').show();
-                    $('#weatherHumidity').show();
-                    $('#weatherWind').show();
-                    $('#weatherUVI').show();
+                    for (var i = 0; i < data.daily[i].temp.day ; i++) {
+                      // for (var i = 0; i < 6; 1++) {
+                          $('.card-title').text(data.timezone);
+
+                          // $('#weathertTempone').text(data.daily[i].temp.day);
+                          // 5 days display
+
+                          $('.card-titleone').show()
+                  }; 
                   }
                   else {
-                    $("#weatherModalTitle").text("City is invalid. Please try again.");
-                    $("#weatherModalTitle").addClass("text-error");
+                    $("#weatherTitle").text("City is invalid. Please try again.");
+                    $("#weatherTitle").addClass("text-error");
                     // localStorage.clear();
                     // $("#weatherModalFooter").hide()
                     $("#weatherContent").addClass("text-error");
                   }
               });
       });
+    });
 }
 
 
